@@ -1,0 +1,73 @@
+Java
+    객체지향 프로그래밍 언어
+        상속, 캡슐화, 다형성
+    OS에 독립적, OS에 따라서 전혀 프로그램을 바꾸지 않아도 실행 가능
+        Java Virtual Machine과 통신, JVM이 자바 응용프로램으로부터 전달받은 명령을 해당 운영체제가 이해할 수 있도록 변환하여 전달
+        JVM은 OS에 종속적이라서 여러 운영체제에 설치할 수 있는 서로 다른 버전의 JVM 제공
+    자동 메모리 관리
+        가비지 컬렉터가 자동으로 메모리를 관리
+    네트워크와 분산처리 지원
+    풍부한 클래스 라이브러리(JAVA API)
+    멀티쓰레드 지원
+        여러 쓰레드에 대한 스케쥴링을 자바 인터프리터가 담당
+    동적 로딩 지원
+        실행 시에 모든 클래스가 로딩되지 않고, 필요한 시점에 클래스를 로딩하여 사용
+        일부 클래스가 변경되어도 전체 애플리케이션을 다시 컴파일하지 않음, 비교적 유연한 처리
+
+JVM(Java Virtual Machine)
+    일반 애플리케이션의 코드는 OS만 거치고 HW로 전달
+    JAVA는 JVM을 한 번 더 거치기 때문에 속도가 느리다는 단점
+        바이트 코드(컴파일 된 자바코드)를 하드웨어의 기계어로 바로 변환해주는 JIT(Just In Time) 컴파일러와 향상된 최적화 기술이 적용되어서 속도 빨라짐
+
+    JDK : JVM + Java API + development tools
+    A.java => (javac.exe[java compiler]) => A.class => (java.exe[java interpreter]) => execute
+
+    모든 코드는 클래스 안에 존해애햐 하며, 서로 관련된 코드들을 그룹으로 나누어 별도의 클래스 구성
+    클래스들이 모여서, Java Application
+    모든 클래스가 main method를 가지고 있어야 하는 것은 아니지만, 하나의 Java App에는 main method를 포함한 클래스가 반드시 하나는 존재해야
+    main method : Java App의 시작점
+    작성된 Java App을 실행할 때는, java.exe 다음에 main method를 포함한 클래스의 이름을 적어줘야 한다.
+
+Java Application의 실행 과정
+    1. 프로그램의 실행에 필요한 클래스(*.class)를 로드
+    2. 클래스 파일 검사
+    3. 지정된 클래스에서 main method 호출
+
+변수
+    int, long
+    float, double : 실수 기본형은 double, float : 7자리까지 오차 없음, double은 15자리까지 오차 없음
+    char, String : 'c'(character), "String"
+
+상수
+    final int variable = 4 => (literal);
+    일단 상수에 값이 저장된 이후에는 변경 불가, 선언 후 나중에 할당 가능
+    리터럴 : 그 자체로 값을 의미하는 것
+
+리터럴의 타입과 접미사
+    리터럴에도 타입이 존재, 리터럴에 접미사를 붙여서 타입을 구분
+    정수 기본형은 int, long타입을 쓰고 싶다면, L을 붙임(425L)
+    실수 기본형은 double, float타입을 쓰고 싶다면, F를 붙임
+    byte와 short는 접미사 없음
+    8진수 : 접두사 0, 16진수 : 접두사 0x
+    정수형 리터럴의 중간에 _를 넣을 수 있음 (1_000 == 1000)
+
+문자 리터럴과 문자열 리터럴
+    char 리터럴은 안에 반드시 하나의 문자 필요
+    String 리터럴은 안에 공백 가능
+    String은 객체
+    문자열 + any type = 문자열
+
+자바는 참조형에 대한 연산 불가, 실제 연산에 사용되는것은 모두 기본형 변수
+
+printf => C랑 같음, formatted print
+    %d : 10진
+    %x : 16진수
+    %f : 부동소수점
+    %c : 문자
+    %s : string
+
+타입이 정해져 있으므로, 오버플로우에 주의하자
+    최솟값에서 1빼면 최댓값이 되고, 최댓값에서 1을 더하면 최솟값이 된다
+
+타입 변환
+    숫자 -> 문자

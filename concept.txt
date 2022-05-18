@@ -111,3 +111,15 @@ printf => C랑 같음, formatted print
     복합 대입 연산자
         i *= 10 + j;
         가장 마지막에 이루어짐, i = i * (10+j) 와 같은 의미
+
+
+Switch
+    1. 조건식을 먼저 계산한 다음, 그 결과와 일치하는 case문으로 이동
+    2. 이후의 문장들 수행
+    3. break문이나 switch문의 끝을 만나면 switch문 전체를 빠져나감
+
+    switch문의 조거신 결과는 정수 또는 문자열이어야 함
+    case문의 값은 정수 상수, 문자열만 가능하며 중복되지 않아야 함
+
+난수
+    Math.random() : 0이상 1미만 double return

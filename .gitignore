@@ -3,6 +3,8 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 .idea
+syntax.iml
+.history
 
 ### Eclipse ###
 .apt_generated

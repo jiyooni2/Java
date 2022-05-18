@@ -1,4 +1,4 @@
-public class variable {
+public class ch02_variable {
    public static void main(String[] args) {
       //without newline
       System.out.print(4);

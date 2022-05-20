@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ch03_conditionalStatement {
+public class ch04_conditionalStatement {
     public static void main(String[] args) {
         int score = 80;
 

@@ -123,3 +123,8 @@ Switch
 
 난수
     Math.random() : 0이상 1미만 double return
+
+continue
+    while문에서 continue는 조건식으로 이동
+    for문에서 continue는 증감식으로 이동
+    

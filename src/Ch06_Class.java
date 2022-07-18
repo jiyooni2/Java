@@ -1,5 +1,4 @@
-
-class Ch06_ObjectOrientedProgramming {
+class Ch06_Class {
     public static void main(String[] args) {
         // Tv 클래스 타입의 참조변수 t 선언
         Tv t;

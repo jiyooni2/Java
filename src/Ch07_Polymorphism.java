@@ -46,6 +46,9 @@ class Buyer {
     int money = 1000;
     int bonusPoint = 0;
 
+    // 여러 종류의 객체를 하나의 배열로 다루기
+    Product[] cart = new Product[10];
+
     // 다형성을 이용하면, 모든 물건들에 대해서 각각 따로 buy 메소드를 만들지 않아도 된다.
     void buy(Product p) {
         if (money < p.price) {

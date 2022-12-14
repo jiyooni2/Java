@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Iterator;
 
 public class Ch11_ArrayList {
     public static void main(String[] args) {
@@ -46,6 +47,11 @@ public class Ch11_ArrayList {
         System.out.println("list1.retainsAll(list2): " + list1.retainAll(list2));
         System.out.println(list1);
         System.out.println(list2);
+
+        Iterator it = list1.iterator();
+        while (it.hasNext()) {
+            System.out.println(it.next());
+        }
 
     }
 

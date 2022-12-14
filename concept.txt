@@ -1022,4 +1022,47 @@ Queue - LinkedList가 구현체
         Object element() => peek
         Object peek()
 
+Iterator
+    컬렉션에 저장된 요소를 접근하는데 사용되는 인터페이스
+
+ListIterator
+    Iterator에 양방향 조회기능 추가(List를 구현한 경우에만 가능)
+
+Enumeration
+    Iterator 구버전
+
+    Set에서 Iterator를 사용할 경우, Key또는 Value를 각각 따로 얻어온 후에 iterator()를 호출해야 함
+        map.entrySet().iterator();
+
     
+Arrays
+    
+    복사
+        Arrays.copyOf(arr, int number)
+        Arrays.copyOfRange(arr, int start, int last)
+
+    채우기
+        int[] arr = new int[5];
+        Arrays.fill(arr,9); // arr=[9,9,9,9,9]
+        Arrays.setAll(arr,(i)->(int)(Math.random()*5)+1);
+
+    정렬/검색
+        int[] arr = {3,2,1,4,5};
+        Arrays.sort(arr);
+        int idx = Arrays.binarySearch(arr,2);
+            이분탐색이므로 반드시 정렬된 상태에서 동작
+    
+    비교/출력
+        일차원 배열 출력 : toString()
+        다차원 배열 출력 : deepToString()
+
+        비교(값 비교)
+        일차원 배열 비교 : Arrays.equals()
+        다차원 배열 비교 : Arrays.deepEquals()
+
+    배열을 List로 변환
+        List list = Arrays.asList(new Integer[]{1,2,3,4,5});
+        List list = Arrays.asList(1,2,3,4,5);
+            위의 두 경우에는, List의 크기를 변경할 수 없으며 추가 삭제 불가능
+
+        List list = new ArrayList(Arrays.asList(1,2,3,4,5));

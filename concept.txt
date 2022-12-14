@@ -986,4 +986,40 @@ ArrayList
             void trimToSize() : 빈 공간 제거
 
         
+LinkedList
+    ArrayList
+        크기 변경 불가, 비순차적 데이터의 추가 또는 삭제에 많은 시간 소요
+        인덱스가 n인 데이터의 주소 = 배열의 주소 + n * 데이터 타입의 크기
+        주소에 대한 접근이 용이하기에, 접근 시간은 빠르지만 추가 삭제 느림
+    
+    LinkedList
+        Link를 따라서 각 Node에 접근하므로, 접근 시간은 느리지만, 추가 삭제는 빠름
+    
+
+Stack - Stack이 구현체
+    LIFO
+    
+    methods
+        boolean empty()
+        Object peek()
+        Object pop()
+        Object push(Object item)
+        int search(Object o) : 못찾으면 -1 반환
+
+
+Queue - LinkedList가 구현체
+    FIFO
+    
+    추가
+        boolean add(Object o) : Queue에 추가
+        boolean offer(Object o) : Queue에 객체를 저장
         
+    삭제
+        Object remove() : 객체를 꺼내 반환
+        Object poll() : Queue에서 객체를 꺼내서 반환
+
+    조회
+        Object element() => peek
+        Object peek()
+
+    

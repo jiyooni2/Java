@@ -3,7 +3,6 @@ public class Ch07_Inheritance {
         Tv tv = new Tv(false, 5);
         SmartTv smartTv = new SmartTv();
     }
-
 }
 
 // 상속 관계

@@ -1,3 +1,5 @@
+import java.util.Optional;
+
 class Ch06_Class {
     public static void main(String[] args) {
         // Tv 클래스 타입의 참조변수 t 선언
@@ -47,7 +49,9 @@ class Tv {
         this.channel = channel;
     }
 
-    void power() {
+    // optional
+
+    void power(Optional<Integer> a) {
         power = !power;
     }
 

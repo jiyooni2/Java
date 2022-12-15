@@ -1262,4 +1262,124 @@ Arrays
 
 Comparator, Comparable
     인터페이스로 컬렉션을 정렬하는데 필요한 메소드 정의
+    Comparable을 구현한 클래스는 정렬 가능 의미
+    
+    Comparable : 기본 정렬 기준을 구현하는데 사용 -> Arrays.sort(arr); -> arr의 기본 정렬 기준에 따라 정렬
+        int compareTo(Object o); overriding
+            두 객체가 같으면 0, 비교하는 값보다 작으면 음수, 크면 양수 반환
 
+    Comparator : 기본 정렬 기준 외 다른 기준으로 정렬하고자 할 때 사용 -> Array.sort(arr, new Comparator());
+        int compare(Object o1, Object o2)
+
+
+HashSet
+    Set 인터페이스, 중복 요소 저장 X, 저장순서 유지 X
+    Object를 저장하므로, 값이 같아도 Object type이 다르다면, 중복으로 간주하지 않음 
+    add 시에 이미 있는 elem이면 false를 return
+
+    add하기 전에 중복 여부를 판별하기 위해 equals()와 hashCode() 호출 뒤 비교
+    type에 관계없이 값만 다르길 바란다면, 이 두개의 method를 overriding
+
+
+    HashSet()
+    HashSet(Collection c)
+    HashSet(int initialCapacity)
+
+    boolean add(Object o)
+    boolean addAll(Collection c)
+
+    void clear()
+    boolean contains(Object o)
+    boolean containsAll(Collection c)
+    boolean isEmpty()
+    Iterator iterator()
+    boolean remove(Object o)
+    boolean removeALl(Collection c)
+    boolean retainAll(Collection c)
+    int size()
+    Object[] to Array()
+
+
+TreeSet - Heap 느낌, 이진 탐색 트리
+
+
+
+HashMap
+    key, value
+    hashing 사용, 많은 양의 데이터 검색 시 성능 좋음
+    key, value에 null 가능
+
+    key : 컬렉션 내의 키에서 유일
+    value : 중복 허용
+
+    HashMap()
+    HashMap(int initialCapacity)
+    HashMap(Map m)
+
+    void clear
+    Object clone()
+    boolean containsKey(Object key)
+    boolean containsValue(Object value)
+    
+    Set entrySet() : HashMap에 저장된 키와 값을 엔트리 형태로 Set에 저장해서 반환
+    Set keySet()
+    Collection values()
+
+    Object get(Object key)
+    Object getOrDefault(Object Key, Object defaultValue) : 키 못찾으면 default
+    boolean isEmpty()
+    Object put(Object key, Object value) : 중복된 key값 들어오면 update
+    void putAll(Map m)
+    Object remove(Object key)
+    Object replace(Object key, Object value)
+    boolean replace(Object key, Object oldValue, Object newValue) : key와 oldValue가 모두 일치하는 경우에만 대체
+    int size()
+
+
+Collections
+    Arrays : Array에 관한 메소드 제공
+    Collections : Collection에 관한 메소드 제공
+
+    Collections.fill()
+    Collections.copy()
+    Collections.sort()
+    Collections.binarySearch()
+    
+
+    Collection의 동기화
+        ArrayList, HashMap : 동기화 자체적 처리 X
+        필요한 경우에 Collections의 동기화 메소드 사용
+
+        List syncList = Collections.synchronizedList(new ArrayList(...));
+    
+    변경 불가 컬렉션 = 읽기 전용 컬렉션
+        static Collection unmodifiableCollection(Collection c)
+
+    싱글톤 컬렉션 : 단 하나의 객체만을 저장하는 컬렉션, 반환된 컬렉션은 변경 불가
+        static List singletonList(Object o)
+        static Set singleton(Object o)
+        static Map singletonMap(Object key, Object value)
+    
+    한 종류의 객체만 저장하는 컬렉션 > Generic으로 처리하는게 바람직, JDK 1.5 이전에서만 사용
+        static Collection checkedCollection(Collection c, Class type)
+
+        ex)
+        List list = new ArrayList();
+        List checkedList = checkedList(list,String.class);
+        checkedList.add("abc");
+        checkedList.add(3); // error
+
+
+정리
+    ArrayList
+        배열 기반, 데이터 추가와 삭제 불리, 순차적 추가 삭제 빠름, 임의의 요소에 대한 접근성 빠름
+    
+    LinkedList
+        연결 기반, 데이터 추가와 삭제 유리, 접근성 느림
+    
+    HashMap
+        배열과 연결 결합, 추가/삭제/검색/접근성 모두 빠름, 검색 매우 빠름
+    
+    TreeMap
+        연결 기반, 정렬과 검색에 적합, 검색은 HashMap 보다 느림
+    

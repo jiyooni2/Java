@@ -1,7 +1,5 @@
-
 public class ch03_operator {
     public static void main(String[] args) {
-
         // 2, int와 int의 연산
         System.out.println(5 / 2);
         // 2.5 float과 int의 연산이므로 float과 float의 연산으로 자동 변환

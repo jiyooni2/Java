@@ -1309,8 +1309,8 @@ HashMap
     hashing 사용, 많은 양의 데이터 검색 시 성능 좋음
     key, value에 null 가능
 
-    key : 컬렉션 내의 키에서 유일
-    value : 중복 허용
+    key : 컬렉션 내의 키에서 유일, 중복 불가능
+    value : 중복 허용(덮어쓰기 됨)
 
     HashMap()
     HashMap(int initialCapacity)
